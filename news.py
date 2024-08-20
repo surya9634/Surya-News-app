@@ -6,6 +6,8 @@ import requests
 from io import BytesIO
 import os
 
+api = input("pls input you newsapi = ")
+
 class NewsApp:
     def __init__(self):
         # initial GUI load
@@ -126,9 +128,8 @@ class NewsApp:
 
         # Hide categories frame
         self.categories_frame.pack_forget()
-
     def fetch_news(self, keyword):
-        api_key = 'cffec197ad5f4bad84fcba85761bd1e1'
+        api_key = (api)
         url = f'https://newsapi.org/v2/everything?q={keyword}&apiKey={api_key}'
         response = requests.get(url)
         if response.status_code == 200:
