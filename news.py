@@ -42,7 +42,7 @@ class NewsApp:
             for _ in range(2):
                 if categories:
                     category = categories.pop(0)
-                    img_path = f"C:\\Users\\ssrss\\OneDrive\\Desktop\\G.O.A.T\\news\\photos\\{category.lower()}.jpg"
+                    img_path = f"photos\\{category.lower()}.jpg"
                     if os.path.exists(img_path):
                         img = Image.open(img_path).resize((150, 170))
                         photo = ImageTk.PhotoImage(img)
@@ -85,7 +85,7 @@ class NewsApp:
                 raise Exception(f"Failed to fetch image: HTTP status code {response.status_code}")
         except Exception as e:
             print(f"Error loading image: {e}")
-            img_path = os.path.join(os.path.dirname(__file__), "C:\\Users\\ssrss\\OneDrive\\Desktop\\G.O.A.T\\news\\no_image.jpg")
+            img_path = os.path.join(os.path.dirname(__file__), "no_image.jpg")
             im = Image.open(img_path).resize((350, 200))
             photo = ImageTk.PhotoImage(im)
 
